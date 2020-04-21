@@ -1,0 +1,19 @@
+<div class="component-style table-component">
+    <table class="component-tag">
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col|uppercase }}
+            </th>
+        </tr>
+        <tr class="component-style table-row-component" *ngFor="let student of students" app-table-row
+            [student]="student" [columns]="columns">
+        </tr>
+    </table>
+
+</div>
+
+<app-pagination [maxPages]="maxPages"
+[current]="currentPage"
+[postsPerPage]="postsPerPage"
+[itemsPerPage]="itemsPerPage"
+(changePage)="pageChanged($event)"></app-pagination>
